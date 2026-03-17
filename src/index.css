@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+    
+    /* Custom real estate colors */
+    --estate-primary: #2563EB;
+    --estate-primary-dark: #1D4ED8;
+    --estate-secondary: #F59E0B;
+    --estate-dark: #1E293B;
+    --estate-gray: #64748B;
+    --estate-light: #F8FAFC;
+    --estate-border: #E2E8F0;
+    --estate-success: #10B981;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-slate-900 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom font classes */
+.font-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Property card hover effect */
+.property-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.property-card-image {
+  transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-card-image {
+  transform: scale(1.05);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700 shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-slate-900 px-6 py-3 rounded-lg font-medium border border-slate-200 transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-slate-50 border-slate-300;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium;
+}
+
+.nav-link.active {
+  @apply text-blue-600;
+}
+
+/* Search input styles */
+.search-input {
+  @apply w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300;
+}
+
+/* Filter chip styles */
+.filter-chip {
+  @apply px-4 py-2 rounded-full border border-slate-200 text-sm font-medium text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all duration-300 cursor-pointer;
+}
+
+.filter-chip.active {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+/* Price tag styles */
+.price-tag {
+  @apply text-2xl font-bold text-slate-900;
+}
+
+/* Feature icon styles */
+.feature-icon {
+  @apply w-5 h-5 text-slate-400;
+}
+
+/* Section styles */
+.section-padding {
+  @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Image hover effect */
+.image-hover-scale {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card shadow */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Form input focus */
+.form-input:focus {
+  @apply ring-2 ring-blue-200 border-blue-500;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Location card overlay */
+.location-overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Badge styles */
+.badge-new {
+  @apply bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded;
+}
+
+.badge-featured {
+  @apply bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded;
+}
+
+.badge-sold {
+  @apply bg-slate-500 text-white text-xs font-semibold px-2 py-1 rounded;
+}
+
+/* Gallery thumbnail */
+.gallery-thumb {
+  @apply cursor-pointer opacity-70 transition-opacity duration-300;
+}
+
+.gallery-thumb:hover,
+.gallery-thumb.active {
+  @apply opacity-100;
+}
+
+/* Agent card */
+.agent-card {
+  @apply bg-white rounded-xl p-6 border border-slate-100;
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+  @apply w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  @apply fixed inset-0 bg-white z-50 transform transition-transform duration-300;
+}
+
+.mobile-menu.closed {
+  transform: translateX(100%);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
