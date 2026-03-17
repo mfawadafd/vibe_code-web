@@ -31,11 +31,11 @@ const SearchBar = ({ onSearch, variant = 'compact' }: SearchBarProps) => {
   const isHero = variant === 'hero';
 
   const inputClasses = isHero
-    ? 'bg-white/10 backdrop-blur-md border-white/20 text-white placeholder-white/60 focus:bg-white/20'
-    : 'bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200';
+    ? 'bg-white/10 backdrop-blur-md border-white/20 text-black placeholder-black focus:bg-white/20'
+    : 'bg-white border-slate-200 text-black placeholder-black focus:border-blue-500 focus:ring-2 focus:ring-blue-200';
 
-  const labelClasses = isHero ? 'text-white/80' : 'text-slate-600';
-  const iconClasses = isHero ? 'text-white/60' : 'text-slate-400';
+  const labelClasses = 'text-black';
+  const iconClasses = 'text-black';
 
   return (
     <form
